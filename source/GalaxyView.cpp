@@ -616,8 +616,8 @@ void GalaxyView::paintEvent(QPaintEvent */*event*/)
     if(systemView && systemView->Selected())
     {
         QPointF pos = systemView->Selected()->Position().toPointF();
-        painter.drawEllipse(pos, 10, 10);
-        painter.drawEllipse(pos, 100, 100);
+        double range = systemView->Selected()->JumpRange();
+        painter.drawEllipse(pos, range, range);
     }
 }
 
